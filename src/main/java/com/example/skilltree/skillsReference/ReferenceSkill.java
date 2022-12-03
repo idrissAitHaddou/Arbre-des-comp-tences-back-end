@@ -1,12 +1,13 @@
-package com.example.skilltree.skills;
+package com.example.skilltree.skillsReference;
 
+import com.example.skilltree.competence.Competence;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-@Table(name = "skills")
-public class Skill {
+@Table(name = "referencec_skill")
+public class ReferenceSkill {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)

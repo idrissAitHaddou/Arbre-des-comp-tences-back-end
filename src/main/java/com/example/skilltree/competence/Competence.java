@@ -1,5 +1,6 @@
-package com.example.skilltree.skills;
+package com.example.skilltree.competence;
 
+import com.example.skilltree.skillsReference.ReferenceSkill;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class Competence {
     @Basic
     private String name;
     @OneToOne
-    @JoinColumn(name = "id_skill", referencedColumnName = "id")
-    private Skill skill;
+    @JoinColumn(name = "id_reference", referencedColumnName = "id")
+    private ReferenceSkill referenceSkill;
     @OneToMany
     @JoinColumn(name = "id_validate_competence", referencedColumnName = "id")
     private List<ValidateCompetence> validateCompetences;
@@ -37,12 +38,12 @@ public class Competence {
         this.name = name;
     }
 
-    public Skill getSkill() {
-        return skill;
+    public ReferenceSkill getSkill() {
+        return referenceSkill;
     }
 
-    public void setSkill(Skill skill) {
-        this.skill = skill;
+    public void setSkill(ReferenceSkill skill) {
+        this.referenceSkill = skill;
     }
 
     public List<ValidateCompetence> getValidateCompetences() {

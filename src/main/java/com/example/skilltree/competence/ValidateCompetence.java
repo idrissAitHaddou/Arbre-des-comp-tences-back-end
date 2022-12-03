@@ -1,4 +1,4 @@
-package com.example.skilltree.skills;
+package com.example.skilltree.competence;
 
 import jakarta.persistence.*;
 

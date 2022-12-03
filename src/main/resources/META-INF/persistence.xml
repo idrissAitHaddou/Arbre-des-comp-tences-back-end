@@ -5,6 +5,9 @@
              version="3.0">
     <persistence-unit name="skills">
         <class>com.example.skilltree.users.User</class>
+        <class>com.example.skilltree.competence.Competence</class>
+        <class>com.example.skilltree.competence.ValidateCompetence</class>
+        <class>com.example.skilltree.skillsReference.ReferenceSkill</class>
         <properties>
             <property name='hibernate.connection.driver_class' value="org.postgresql.Driver" />
             <property name='hibernate.connection.url' value="jdbc:postgresql://localhost:5433/skill-tree" />
