@@ -1,4 +1,4 @@
-package simplone.example.simplonecloneui.config;
+package com.example.skilltree.config;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -10,7 +10,7 @@ public class Config {
     private static Config config = new Config();
 
     private Config(){
-        this.emf = Persistence.createEntityManagerFactory("myunit");
+        this.emf = Persistence.createEntityManagerFactory("skills");
     }
 
     public EntityManagerFactory getEmf(){
