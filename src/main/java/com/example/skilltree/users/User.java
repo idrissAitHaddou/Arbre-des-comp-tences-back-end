@@ -6,9 +6,12 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    @Column(name = "email")
+    @Basic
+    private String email;
     @Column(name = "firstname")
     @Basic
     private String firstname;
@@ -92,5 +95,13 @@ public class User {
 
     public void setPromotion(String promotion) {
         this.promotion = promotion;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

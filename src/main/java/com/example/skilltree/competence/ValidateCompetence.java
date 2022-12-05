@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "validate_competence")
 public class ValidateCompetence {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     @Column(name = "id_user")

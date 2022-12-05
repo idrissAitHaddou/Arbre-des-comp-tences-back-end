@@ -9,7 +9,7 @@ import java.util.List;
 @Table(name = "referencec_skill")
 public class ReferenceSkill {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     @Column(name = "name")

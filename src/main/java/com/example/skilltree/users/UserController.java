@@ -1,21 +1,22 @@
 package com.example.skilltree.users;
 
-import com.google.gson.Gson;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
 @Controller
 @RestController
+@RequestMapping("/api/user")
 public class UserController {
     @Autowired
     private UserService userService;
-    @GetMapping("/hello")
-    public String hello(){
-      return userService.userService();
+    @PostMapping("/login")
+    public String loginController(@ModelAttribute User user){
+        System.out.println(user.getEmail());
+        return userService.loginService(user.getEmail(), user.getPassword());
     }
 }

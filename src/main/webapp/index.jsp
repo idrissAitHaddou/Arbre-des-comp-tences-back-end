@@ -8,6 +8,10 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="/hello">Hello Controller</a>
+<form action="/api/user/login" method="post">
+    <input type="text" placeholder="email" name="email">
+    <input type="password" placeholder="password" name=password>
+    <button type="submit">submit</button>
+</form>
 </body>
 </html>
