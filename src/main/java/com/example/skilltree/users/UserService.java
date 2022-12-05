@@ -15,13 +15,9 @@ public class UserService {
         String status = "500";
         String message = "login invalid";
         List<User> users = userRepository.loginRepository(email, password);
-        System.out.println(users.toString());
         if(users.size() > 0) {
             status = "200";
             message = "login successfully";
-            System.out.println("is full");
-        }else {
-            System.out.println("is empty");
         }
         HashMap<String, String> response = new HashMap<>();
         response.put("status", status);
