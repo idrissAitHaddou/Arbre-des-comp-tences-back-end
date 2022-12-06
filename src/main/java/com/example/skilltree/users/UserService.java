@@ -24,4 +24,16 @@ public class UserService {
         response.put("message", message);
         return new Gson().toJson(response);
     }
+
+    public String detaillsService(String email) {
+        User user = userRepository.detaillsRepository(email);
+        user.setPassword("");
+        return new Gson().toJson(user);
+    }
+
+    public String allUsersService() {
+        List<User> users = userRepository.getAllUsersRepository();
+        for(User user: users) user.setPassword("");
+        return new Gson().toJson(users);
+    }
 }

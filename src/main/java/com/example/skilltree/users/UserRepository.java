@@ -27,4 +27,37 @@ public class UserRepository {
             em.close();
         }
     }
+
+    public User detaillsRepository(String email) {
+        EntityManager em = Config.getConfig().getEntityManager();
+        try{
+            User user = null;
+            em.getTransaction().begin();
+            Query query = em.createQuery("SELECT U FROM User U where U.email = :email");
+            query.setParameter("email", email);
+            user = (User) query.getSingleResult();
+            em.getTransaction().commit();
+            return user;
+        }catch (Exception e) {
+            return null;
+        }finally {
+            em.close();
+        }
+    }
+
+    public List<User> getAllUsersRepository() {
+        EntityManager em = Config.getConfig().getEntityManager();
+        try{
+            List<User> users = null;
+            em.getTransaction().begin();
+            Query query = em.createQuery("SELECT U FROM User U");
+            users = query.getResultList();
+            em.getTransaction().commit();
+            return users;
+        }catch (Exception e) {
+            return null;
+        }finally {
+            em.close();
+        }
+    }
 }

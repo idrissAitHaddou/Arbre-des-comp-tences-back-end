@@ -1,7 +1,5 @@
 package com.example.skilltree.users;
 
-import jakarta.servlet.annotation.MultipartConfig;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -17,5 +15,15 @@ public class UserController {
     public String loginController(@RequestBody User user){
         System.out.println(user.getEmail());
         return userService.loginService(user.getEmail(), user.getPassword());
+    }
+
+    @GetMapping("/detaills")
+    public String detaillsController(@RequestParam(value = "email") String email){
+        return userService.detaillsService(email);
+    }
+
+    @GetMapping("/all")
+    public String allUsersController(){
+        return userService.allUsersService();
     }
 }
