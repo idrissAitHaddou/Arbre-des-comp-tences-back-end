@@ -12,7 +12,12 @@ public class ReferenceController {
     @Autowired
     private ReferenceService referenceService;
     @GetMapping("/all")
-    public String allSkillsController(){
-        return referenceService.allSkillsService();
+    public String allSkillsController(@RequestParam(value = "idReference") int idReference){
+        return referenceService.allSkillsService(idReference);
+    }
+
+    @GetMapping("/validate")
+    public String chnageSkillStatusController(@RequestParam(value = "idSkill") int idSkill, @RequestParam(value = "status") String status, @RequestParam(value = "level") String level){
+        return referenceService.chnageSkillStatusService(idSkill, status, level);
     }
 }
